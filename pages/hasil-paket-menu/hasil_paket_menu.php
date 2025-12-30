@@ -50,9 +50,11 @@ $no = $offset + 1;
 <section>
     <div class="content">
         <h2 class="content-title text-center">Daftar Paket Katering</h2>
-        <div class="container" style="margin-bottom: -20px;">
-            <a href="index.php?page=tambah_hasil_paket_menu" class="btn btn-primary">+ Tambah Paket Katering</a>
-        </div>
+        <?php if ($_SESSION['role'] == 'Pemilik'): ?>
+            <div class="container" style="margin-bottom: -20px;">
+                <a href="index.php?page=tambah_hasil_paket_menu" class="btn btn-primary">+ Tambah Paket Katering</a>
+            </div>
+        <?php endif ?>
         <div class="container mt-4 table-responsive" style="max-height: 700px; overflow-y: auto;">
             <table class="table table-striped table-hover" style="max-height:300px;">
                 <thead>

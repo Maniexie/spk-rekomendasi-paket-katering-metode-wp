@@ -60,7 +60,7 @@ $no = $offset + 1;
                         <tr>
                             <th scope="row"><?= $no++ ?></th>
                             <td><?= $row['nama_paket'] ?></td>
-                            <td><?= $row['harga'] ?></td>
+                            <td>Rp<?= number_format($row['harga']) ?></td>
                             <?php
                             if ($row['tersedia'] == 'Ya') {
                                 $row['tersedia'] = '<span class="badge bg-success">Ya</span>';

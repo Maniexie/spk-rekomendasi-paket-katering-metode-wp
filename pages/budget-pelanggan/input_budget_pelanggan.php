@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
     Swal.fire({
-        title: "Proses Penambahan Data Item Penilaian",
+        title: "Proses Mencari Budget Pelanggan",
         timer: 1500,
         didOpen: () => {
             Swal.showLoading();
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }).then(() => {
         Swal.fire({
             icon: "success",
-            title: "Data Item Penilaian Berhasil di Tambahkan",
+            title: "Berhasil Menemukan Budget Pelanggan",
             showConfirmButton: true,
             timer: 3000
         }).then(() => {
@@ -34,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <section>
     <div class="container">
+        <h3 class="text-center">Input Budget Pelanggan</h3>
         <form action="" method="post">
             <div class="col-md">
                 <label for="budget_pelanggan" class="form-label">Budget Pelanggan</label>
@@ -43,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <label for="porsi" class="form-label">Porsi</label>
                 <input type="text" class="form-control" id="porsi" name="porsi" value="" required>
             </div> -->
-            <button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-primary mt-2" type="submit">Submit</button>
         </form>
     </div>
 </section>

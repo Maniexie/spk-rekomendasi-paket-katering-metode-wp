@@ -37,54 +37,23 @@ $BASE_URL = BASE_URL;
                         aria-current="page">Dashboard</a></li>
                 <li class="nav-item"><a href="index.php?page=profil" class="nav-link">Profil</a></li>
 
-                <li class="nav-item"><a href="index.php?page=input_budget_pelanggan" class="nav-link">Input Budget
-                        Pelanggan</a></li>
-                <li class="nav-item"><a href="index.php?page=kriteria" class="nav-link">Kriteria</a></li>
-                <li class="nav-item"><a href="index.php?page=menu_katering" class="nav-link">Menu Katering</a></li>
-                <li class="nav-item"><a href="index.php?page=paket_katering" class="nav-link">Paket Katering</a>
+
+                <?php if ($_SESSION['role'] == 'Pelanggan'): ?>
+                    <li class="nav-item"><a href="index.php?page=input_budget_pelanggan" class="nav-link">Input Budget
+                            Pelanggan</a></li>
+                <?php endif ?>
+
+                <?php if ($_SESSION['role'] == 'Pemilik'): ?>
+                    <!-- <li class="nav-item"><a href="index.php?page=kriteria" class="nav-link">Kriteria</a></li> -->
+                    <li class="nav-item"><a href="index.php?page=menu_katering" class="nav-link">Menu Katering</a></li>
+                    <li class="nav-item"><a href="index.php?page=paket_katering" class="nav-link">Paket Katering</a></li>
+                <?php endif ?>
+
                 <li class="nav-item"><a href="index.php?page=hasil_paket_menu" class="nav-link">Daftar Paket
                         Katering</a>
                 </li>
 
-                <!-- <li class="nav-item">
-                    <a class="nav-link text-white d-flex justify-content-between align-items-center"
-                        data-bs-toggle="collapse" href="#supervisi" role="button" aria-expanded="false"
-                        aria-controls="supervisi">
-                        <span>Supervisiasd</span>
-                        <i class="fa fa-chevron-down"></i>
-                    </a>
-
-                    <div class="collapse ps-3 mt-1" id="supervisi">
-                        <ul class="nav flex-column">
-
-
-                            <li class="nav-item">
-                                <a class="nav-link text-white sub-list"
-                                    href="index.php?page=kategori_tindak_lanjut_hasil_supervisi">
-                                    Kategori Tindak Lanjut Hasil Supervisi
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white sub-list" href="index.php?page=kategori_penilaian">
-                                    Kategori Item Penilaian
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white sub-list" href="index.php?page=item_penilaian">
-                                    Item Penilaian
-                                </a>
-                            </li>
-                            <li class="nav-item test">
-                                <a class="nav-link text-white sub-list"
-                                    href="index.php?page=daftar_versi_hasil_uji_validitas">
-                                    Hasil Uji Validitas
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="logoutAlert()">Logout</a>
-                </li> -->
+                <li><a href="index.php?page=logout" class="nav-link">Logout</a></li>
             </ul>
         </nav>
 

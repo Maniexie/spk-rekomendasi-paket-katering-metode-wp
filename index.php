@@ -23,6 +23,9 @@ $allowedPages = [
     'hasil_paket_menu' => 'pages/hasil-paket-menu/hasil_paket_menu.php',
     'tambah_hasil_paket_menu' => 'pages/hasil-paket-menu/tambah_hasil_paket_menu.php',
 
+    'pesan_hasil_paket_katering' => 'pages/pesan-paket/pesan_hasil_paket_katering.php',
+    'pesan_paket_katering_fix' => 'pages/pesan-paket/pesan_paket_katering_fix.php',
+
     'forbidden' => 'pages/error/403.php',
     '404' => 'pages/error/404.php',
 

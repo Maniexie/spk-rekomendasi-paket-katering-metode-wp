@@ -5,52 +5,31 @@ function checkRoleAccess($page)
     $role = $_SESSION['role'] ?? null;
 
     $rolePages = [
-        'pemilik' => [
+        'Pemilik' => [
             'dashboard',
             'profil',
-            'hasil_uji_validitas',
-            'kelola_item_penilaian',
 
-            //daftar aktor
-            'daftar_aktor',
-            'edit_aktor',
-            'hapus_aktor',
-            'tambah_aktor',
+            // kriteria
+            'kriteria',
+            'tambah_kriteria',
 
-            //Supervisi -> Kategori Penilaian
-            'kategori_penilaian',
-            'edit_kategori_penilaian',
-            'hapus_kategori_penilaian',
-            'tambah_kategori_penilaian',
+            // menu katering
+            'menu_katering',
+            'tambah_menu_katering',
 
-            //Supervisi -> Item Penilaian
-            'item_penilaian',
-            'edit_item_penilaian',
-            'hapus_item_penilaian',
-            'tambah_item_penilaian',
-            'detail_item_penilaian',
-            'revisi_item_penilaian',
+            // paket katering
+            'paket_katering',
+            'tambah_paket_katering',
 
-            //Supervisi -> Hasil Uji Validitas
-            'hasil_uji_validitas',
-            'daftar_versi_hasil_uji_validitas',
+            // hasil paket menu
+            'hasil_paket_menu',
+            'tambah_hasil_paket_menu',
 
-            //Supervisi -> Jadwal Supervisi
-            'jadwal_supervisi',
-            'detail_jadwal_supervisi',
-            'tambah_jadwal_supervisi',
-            'edit_jadwal_supervisi',
-            'hapus_jadwal_supervisi',
+            // pesan hasil paket katering
+            'pesan_hasil_paket_katering',
+            'pesan_paket_katering_fix',
 
-            // Supervisi -> Hasil Supervisi
-            'hasil_supervisi_for_guru',
-            'detail_hasil_supervisi_for_guru',
 
-            // Supervisi -> Kategori Tindak Lanjut Hasil Supervisi
-            'kategori_tindak_lanjut_hasil_supervisi',
-            'edit_kategori_tindak_lanjut_hasil_supervisi',
-            'hapus_kategori_tindak_lanjut_hasil_supervisi',
-            'tambah_kategori_tindak_lanjut_hasil_supervisi',
         ],
 
         'Pelanggan' => [
@@ -75,26 +54,10 @@ function checkRoleAccess($page)
             'hasil_paket_menu',
             'tambah_hasil_paket_menu',
 
-        ],
-        'guru' => [
-            'dashboard',
-            'profil',
+            // pesan hasil paket katering
+            'pesan_hasil_paket_katering',
+            'pesan_paket_katering_fix',
 
-            //Supervisi -> Kuesioner Uji Validitas
-            'kuesioner_uji_validitas',
-            'daftar_versi_kuesioner_uji_validitas',
-            'intro_kuesioner_uji_validitas',
-
-            //Supervisi -> Jadwal Supervisi
-            'jadwal_supervisi',
-            'detail_jadwal_supervisi',
-            'tambah_jadwal_supervisi',
-            'edit_jadwal_supervisi',
-            'hapus_jadwal_supervisi',
-
-            // Supervisi -> Hasil Supervisi
-            'hasil_supervisi_for_guru',
-            'detail_hasil_supervisi_for_guru',
         ],
     ];
 

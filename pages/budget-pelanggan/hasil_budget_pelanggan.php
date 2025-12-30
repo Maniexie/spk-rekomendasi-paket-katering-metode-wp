@@ -63,7 +63,7 @@ usort($hasil_wp, function ($a, $b) {
             <?php $rekomendasi = $hasil_wp[0]; ?>
             <div class="cards">
                 <div class="card">
-                    <div class="alert alert-success">
+                    <div class="alert">
                         <strong>Rekomendasi Terbaik untuk Budget Pelanggan :Rp <?= number_format($rekomendasi['budget']); ?>
                             :</strong><br>
                         <?= $rekomendasi['nama_paket']; ?><br>
@@ -73,7 +73,7 @@ usort($hasil_wp, function ($a, $b) {
                         <?= $rekomendasi['menu_item']; ?><br>
                     </div>
                     <div class="container">
-                        <a href="index.php?page=pesan_hasil_paket_katering&id_paket_katering=<?= $rekomendasi['id_paket'] ?>"
+                        <a href="index.php?page=pesan_hasil_paket_katering&id_paket_katering=<?= $rekomendasi['id_paket'] ?>&budget=<?= $budget ?>"
                             class="btn btn-primary">Pesan Paket Ini</a>
                     </div>
                 </div>
@@ -102,7 +102,7 @@ usort($hasil_wp, function ($a, $b) {
                                 <td>Rp <?= number_format($paket['harga']); ?></td>
                                 <td><?= $paket['menu_item']; ?></td>
                                 <td><?= round($paket['nilai_wp'], 2); ?></td>
-                                <td><a href="index.php?page=pesan_hasil_paket_katering&id_paket_katering=<?= $paket['id_paket'] ?>"
+                                <td><a href="index.php?page=pesan_hasil_paket_katering&id_paket_katering=<?= $paket['id_paket'] ?>&budget=<?= $paket['budget'] ?>"
                                         class="btn btn-primary">Pesan Paket Ini</a></td>
                                 </td>
                             </tr>
@@ -112,10 +112,12 @@ usort($hasil_wp, function ($a, $b) {
             </div>
 
         <?php else: ?>
-            <div class="alert alert-warning">
-                Tidak ada paket yang sesuai dengan budget dan porsi.
-            </div>
-        <?php endif; ?>
+            <a href="index.php?page=input_budget_pelanggan" class="btn btn-secondary mb-2">
+                < Kembali </a>
+                    <div class="alert alert-warning">
+                        Tidak ada paket yang sesuai dengan budget dan porsi.
+                    </div>
+                <?php endif; ?>
 
     </div>
 </section>
