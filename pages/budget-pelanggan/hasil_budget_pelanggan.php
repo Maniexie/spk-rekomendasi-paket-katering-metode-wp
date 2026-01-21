@@ -3,6 +3,8 @@ require_once __DIR__ . '/../../pages/layouts/header.php';
 require_once __DIR__ . '/../../koneksi.php';
 
 $budget = $_SESSION['budget_pelanggan'] ?? 0;
+$keranjang = $_SESSION['keranjang'] ?? [];
+
 
 $query = mysqli_query($koneksi, "
     SELECT 
@@ -66,15 +68,21 @@ usort($hasil_wp, function ($a, $b) {
                     <div class="alert">
                         <strong>Rekomendasi Terbaik untuk Budget Pelanggan :Rp <?= number_format($rekomendasi['budget']); ?>
                             :</strong><br>
-                        <?= $rekomendasi['nama_paket']; ?><br>
-                        Harga: Rp <?= number_format($rekomendasi['harga']); ?><br>
-                        Menu :
-                        <br>
+                        Jumlah Porsi yang didapatkan :
+                        <?= ceil($rekomendasi['budget'] / $rekomendasi['harga']); ?><br>
+                        Nama Paket: <strong><?= $rekomendasi['nama_paket']; ?></strong><br>
+                        Menu : <br>
                         <?= $rekomendasi['menu_item']; ?><br>
+                        Harga Paket: Rp <?= number_format($rekomendasi['harga']); ?>
+
                     </div>
                     <div class="container">
                         <a href="index.php?page=pesan_hasil_paket_katering&id_paket_katering=<?= $rekomendasi['id_paket'] ?>&budget=<?= $budget ?>"
                             class="btn btn-primary">Pesan Paket Ini</a>
+                        <!-- <a href="index.php?page=tambah_keranjang&id_paket=<?= $rekomendasi['id_paket']; ?>"
+                            class="btn btn-success">
+                            + Keranjang
+                        </a> -->
                     </div>
                 </div>
             </div>
@@ -88,9 +96,10 @@ usort($hasil_wp, function ($a, $b) {
                         <tr>
                             <th scope="col">No</th>
                             <th scope="col">Nama Paket</th>
-                            <th scope="col">Harga</th>
+                            <th scope="col">Harga Paket</th>
                             <th scope="col">Menu</th>
                             <th scope="col">Nilai WP</th>
+                            <th scope="col">Porsi</th>
                             <th scope="col">Aksi</th>
                         </tr>
                     </thead>
@@ -102,9 +111,18 @@ usort($hasil_wp, function ($a, $b) {
                                 <td>Rp <?= number_format($paket['harga']); ?></td>
                                 <td><?= $paket['menu_item']; ?></td>
                                 <td><?= round($paket['nilai_wp'], 2); ?></td>
-                                <td><a href="index.php?page=pesan_hasil_paket_katering&id_paket_katering=<?= $paket['id_paket'] ?>&budget=<?= $paket['budget'] ?>"
+                                <td>
+                                    <?= $jumlahPorsi = ceil($paket['budget'] / $paket['harga']); ?>
+                                </td>
+                                <td><a href="index.php?page=pesan_paket_katering_fix&id_paket_katering=<?= $paket['id_paket'] ?>&budget=<?= $paket['budget'] ?>&jumlah_porsi=<?= $jumlahPorsi ?>"
                                         class="btn btn-primary">Pesan Paket Ini</a></td>
                                 </td>
+                                <!-- <td>
+                                    <a href="index.php?page=tambah_keranjang&id_paket=<?= $paket['id_paket']; ?>"
+                                        class="btn btn-success">
+                                        + Keranjang
+                                    </a>
+                                </td> -->
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

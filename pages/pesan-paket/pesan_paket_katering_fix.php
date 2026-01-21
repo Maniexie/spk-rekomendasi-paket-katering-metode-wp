@@ -3,9 +3,9 @@
 require_once __DIR__ . '/../../pages/layouts/header.php';
 require_once __DIR__ . '/../../koneksi.php';
 
-$id_paket_katering = $_SESSION['id_paket_katering'] ?? '';
-$budget = $_SESSION['budget'] ?? '';
-$porsi = $_SESSION['porsi'] ?? '';
+$id_paket_katering = $_GET['id_paket_katering'] ?? '';
+$budget = $_GET['budget'] ?? '';
+$jumlahPorsi = $_GET['jumlah_porsi'] ?? '';
 
 $getDataHasilPaketMenu = mysqli_query($koneksi, "SELECT hasil_paket_menu.*,
 menu_katering.nama_menu,
@@ -33,15 +33,19 @@ if (mysqli_num_rows($getDataHasilPaketMenu) > 0) {
                 <div class="row">
                     <div class="col-md-6">
                         <p class="card-text">
-                            Nama Paket Katering: <?= $dataPaketKatering['nama_paket'] ?><br>
-                            Harga: Rp <?= number_format($dataPaketKatering['harga']) ?><br>
-                            Porsi: <?= $porsi ?>
+                            budget Anda: Rp
+                            <?= number_format($budget) ?><br>
+                            Nama Paket Katering: <?= $dataPaketKatering['nama_paket'] ?>
+                            <br>
+                            Harga: Rp <?= number_format($dataPaketKatering['harga']) ?>
                             <br>
                             Menu :
                             <br>
                             <?= $dataPaketKatering['nama_menu'] ?>
                             <br>
-                            Total Pembayaran: Rp <?= number_format($dataPaketKatering['harga'] * $porsi) ?>
+
+                            Total Porsi: <?= $jumlahPorsi ?><br>
+                            Total Pembayaran: Rp <?= number_format($dataPaketKatering['harga'] * $jumlahPorsi) ?>
                         </p>
                     </div>
                     <div class="col-md-6">

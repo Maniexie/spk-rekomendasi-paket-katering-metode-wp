@@ -5,7 +5,11 @@ require_once __DIR__ . '/../../koneksi.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['budget_pelanggan'] = $_POST['budget_pelanggan'];
-    // $_SESSION['porsi'] = $_POST['porsi'];
+
+    // format rupiah
+    $budget = $_POST['budget_pelanggan'];
+    $budget = str_replace(['Rp', '.', ' '], '', $budget);
+    $_SESSION['budget_pelanggan'] = (int) $budget;
 
 
     echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -48,6 +52,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
     </div>
 </section>
+
+<script>
+    const budgetInput = document.getElementById('budget_pelanggan');
+
+    budgetInput.addEventListener('keyup', function (e) {
+        this.value = formatRupiah(this.value, 'Rp ');
+    });
+
+    function formatRupiah(angka, prefix) {
+        let number_string = angka.replace(/[^,\d]/g, '').toString();
+        let split = number_string.split(',');
+        let sisa = split[0].length % 3;
+        let rupiah = split[0].substr(0, sisa);
+        let ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+        if (ribuan) {
+            let separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+
+        rupiah = split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
+        return prefix === undefined ? rupiah : (rupiah ? prefix + rupiah : '');
+    }
+</script>
 
 
 <?php

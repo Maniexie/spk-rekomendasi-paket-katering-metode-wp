@@ -10,6 +10,9 @@ $allowedPages = [
     'input_budget_pelanggan' => 'pages/budget-pelanggan/input_budget_pelanggan.php',
     'hasil_budget_pelanggan' => 'pages/budget-pelanggan/hasil_budget_pelanggan.php',
 
+    'keranjang_pemesanan' => 'pages/keranjang-pemesanan/keranjang_pemesanan.php',
+    'tambah_keranjang' => 'pages/keranjang-pemesanan/tambah_keranjang.php',
+
     'kriteria' => 'pages/kriteria/kriteria.php',
     'tambah_kriteria' => 'pages/kriteria/tambah_kriteria.php',
 
@@ -60,6 +63,15 @@ switch ($page) {
         $title = "Hasil Budget Pelanggan Page";
         break;
 
+    // Keranjang
+
+    case 'keranjang':
+        $title = "Keranjang Page";
+        break;
+    case 'tambah_keranjang':
+        $title = "Tambah Keranjang Page";
+        break;
+
 
     //kriteria
     case 'kriteria':
@@ -83,6 +95,12 @@ switch ($page) {
         break;
     case 'tambah_paket_katering':
         $title = "Tambah Paket Katering Page";
+        break;
+    case 'pesan_hasil_paket_katering':
+        $title = "Pesan Hasil Paket Katering Page";
+        break;
+    case 'pesan_paket_katering_fix':
+        $title = "Pesan Paket Katering Fix Page";
         break;
 
     //hasil paket menu

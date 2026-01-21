@@ -37,6 +37,9 @@ function checkRoleAccess($page)
             'profil',
             'input_budget_pelanggan',
             'hasil_budget_pelanggan',
+            //  keranjang pemesanan
+            'keranjang_pemesanan',
+            'tambah_keranjang',
 
             // kriteria
             'kriteria',
