@@ -35,6 +35,14 @@ $allowedPages = [
     'pesan_hasil_paket_katering' => 'pages/pesan-paket/pesan_hasil_paket_katering.php',
     'pesan_paket_katering_fix' => 'pages/pesan-paket/pesan_paket_katering_fix.php',
 
+    'pesan_paket_katering' => 'pages/pesan-paket/pesan_paket_katering.php',
+    'proses_checkout' => 'pages/pesan-paket/proses_checkout.php',
+
+    'proses_checkout_langsung' => 'pages/pesan-paket/proses_checkout_langsung.php',
+
+    'riwayat_pemesanan_pelanggan' => 'pages/riwayat_pemesanan/riwayat_pemesanan_pelanggan.php',
+    'detail_riwayat_pemesanan_pelanggan' => 'pages/riwayat_pemesanan/detail_riwayat_pemesanan_pelanggan.php',
+
     'forbidden' => 'pages/error/403.php',
     '404' => 'pages/error/404.php',
 
@@ -119,6 +127,28 @@ switch ($page) {
     case 'tambah_hasil_paket_menu':
         $title = "Tambah Hasil Paket Menu Page";
         break;
+
+
+    //pesan paket katering langsung
+    case 'proses_checkout_langsung':
+        $title = "Proses Checkout Langsung Page";
+        break;
+    //pesan paket katering
+    case 'pesan_paket_katering':
+        $title = "Pesan Paket Katering Page";
+        break;
+    case 'proses_checkout':
+        $title = "Proses Checkout Page";
+        break;
+    //riwayat pemesanan pelanggan
+    case 'riwayat_pemesanan_pelanggan':
+        $title = "Riwayat Pemesanan Pelanggan Page";
+        break;
+    case 'detail_riwayat_pemesanan_pelanggan':
+        $title = "Detail Riwayat Pemesanan Pelanggan Page";
+        break;
+
+
 
     // Error Pages
     case 'forbidden':

@@ -57,6 +57,19 @@ if (mysqli_num_rows($getDataHasilPaketMenu) > 0) {
                         </p>
                     </div>
                 </div>
+                <form action="index.php?page=proses_checkout_langsung" method="POST">
+
+                    <input type="hidden" name="id_paket" value="<?= $id_paket_katering ?>">
+                    <input type="hidden" name="nama_paket" value="<?= $dataPaketKatering['nama_paket'] ?>">
+                    <input type="hidden" name="harga" value="<?= $dataPaketKatering['harga'] ?>">
+                    <input type="hidden" name="jumlah" value="<?= $jumlahPorsi ?>">
+                    <input type="hidden" name="total" value="<?= $dataPaketKatering['harga'] * $jumlahPorsi ?>">
+
+                    <button class="btn btn-success btn w-24 text-center mt-2" target="_blank">
+                        Konfirmasi Pesanan
+                    </button>
+                </form>
+
             </div>
         </div>
     </div>

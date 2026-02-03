@@ -1,9 +1,6 @@
 <?php
 
-$ajaxPages = [
-    'update_keranjang_pemesanan',
-    'get_pemesanan'
-];
+
 function checkRoleAccess($page)
 {
     $role = $_SESSION['role'] ?? null;
@@ -33,6 +30,7 @@ function checkRoleAccess($page)
             // pesan hasil paket katering
             'pesan_hasil_paket_katering',
             'pesan_paket_katering_fix',
+
 
 
         ],
@@ -67,11 +65,18 @@ function checkRoleAccess($page)
             // pesan hasil paket katering
             'pesan_hasil_paket_katering',
             'pesan_paket_katering_fix',
+            'pesan_paket_katering',
+            'proses_checkout',
+            'riwayat_pemesanan_pelanggan',
+            'detail_riwayat_pemesanan_pelanggan',
+
+            // proses checkout langsung
+            'proses_checkout_langsung',
 
         ],
     ];
 
-    if (!$role || !isset($rolePages[$role]) || !in_array($page, $rolePages[$role])) {
+    if (!isset($rolePages[$role]) || !in_array($page, $rolePages[$role])) {
         http_response_code(403);
         require_once __DIR__ . '/../pages/errors/forbidden.php';
         // header("Location: index.php?page=forbidden");

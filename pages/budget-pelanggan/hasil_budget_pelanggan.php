@@ -139,11 +139,11 @@ usort($hasil_wp, function ($a, $b) {
 
         <?php else: ?>
             <a href="index.php?page=input_budget_pelanggan" class="btn btn-secondary mb-2">
-                < Kembali </a>
-                    <div class="alert alert-warning">
-                        Tidak ada paket yang sesuai dengan budget dan porsi.
-                    </div>
-                <?php endif; ?>
+                ← Kembalii </a>
+            <div class="alert alert-warning">
+                Tidak ada paket yang sesuai dengan budget dan porsi.
+            </div>
+        <?php endif; ?>
 
     </div>
 </section>

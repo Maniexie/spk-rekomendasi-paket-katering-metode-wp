@@ -52,6 +52,10 @@ $BASE_URL = BASE_URL;
                 <li class="nav-item"><a href="index.php?page=hasil_paket_menu" class="nav-link">Daftar Paket
                         Katering</a>
                 </li>
+                <?php if ($_SESSION['role'] == 'Pelanggan'): ?>
+                    <li class="nav-item"><a href="index.php?page=riwayat_pemesanan_pelanggan" class="nav-link">Riwayat
+                            Pemesanan</a></li>
+                <?php endif ?>
 
                 <li><a href="index.php?page=logout" class="nav-link">Logout</a></li>
             </ul>
