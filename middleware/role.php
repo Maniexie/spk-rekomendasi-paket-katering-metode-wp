@@ -1,8 +1,13 @@
 <?php
 
+$ajaxPages = [
+    'update_keranjang_pemesanan',
+    'get_pemesanan'
+];
 function checkRoleAccess($page)
 {
     $role = $_SESSION['role'] ?? null;
+
 
     $rolePages = [
         'Pemilik' => [
@@ -40,6 +45,8 @@ function checkRoleAccess($page)
             //  keranjang pemesanan
             'keranjang_pemesanan',
             'tambah_keranjang',
+            'update_keranjang_pemesanan',
+            'get_pemesanan',
 
             // kriteria
             'kriteria',
@@ -70,4 +77,7 @@ function checkRoleAccess($page)
         // header("Location: index.php?page=forbidden");
         exit;
     }
+
+
+
 }

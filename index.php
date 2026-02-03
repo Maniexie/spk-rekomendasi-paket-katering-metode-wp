@@ -1,5 +1,9 @@
 <?php
 session_start();
+$ajaxPages = [
+    'update_keranjang_pemesanan',
+    'get_pemesanan'
+];
 
 $allowedPages = [
     'login' => 'pages/auth/login.php',
@@ -12,6 +16,8 @@ $allowedPages = [
 
     'keranjang_pemesanan' => 'pages/keranjang-pemesanan/keranjang_pemesanan.php',
     'tambah_keranjang' => 'pages/keranjang-pemesanan/tambah_keranjang.php',
+    'get_pemesanan' => 'pages/keranjang-pemesanan/get_pemesanan.php',
+    'update_keranjang_pemesanan' => 'pages/keranjang-pemesanan/update_keranjang_pemesanan.php',
 
     'kriteria' => 'pages/kriteria/kriteria.php',
     'tambah_kriteria' => 'pages/kriteria/tambah_kriteria.php',
@@ -64,13 +70,16 @@ switch ($page) {
         break;
 
     // Keranjang
-
     case 'keranjang':
         $title = "Keranjang Page";
         break;
     case 'tambah_keranjang':
         $title = "Tambah Keranjang Page";
         break;
+    case 'keranjang_pemesanan':
+        $title = "Keranjang Pemesanan Page";
+        break;
+
 
 
     //kriteria
@@ -124,8 +133,23 @@ if (!isset($allowedPages[$page])) {
     exit;
 }
 
+/*
+|--------------------------------------------------------------------------
+| 🔥 AJAX BYPASS
+|--------------------------------------------------------------------------
+| halaman ajax jangan kena middleware / header / html
+*/
+if (in_array($page, $ajaxPages)) {
+    require $allowedPages[$page];
+    exit;
+}
 
-// 2️⃣ cek role (kecuali login & logout)
+
+/*
+|--------------------------------------------------------------------------
+| Normal page (pakai role & layout)
+|--------------------------------------------------------------------------
+*/
 if (!in_array($page, ['login', 'logout'])) {
     require_once __DIR__ . '/middleware/role.php';
     checkRoleAccess($page);

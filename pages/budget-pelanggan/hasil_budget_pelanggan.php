@@ -77,12 +77,12 @@ usort($hasil_wp, function ($a, $b) {
 
                     </div>
                     <div class="container">
-                        <a href="index.php?page=pesan_hasil_paket_katering&id_paket_katering=<?= $rekomendasi['id_paket'] ?>&budget=<?= $budget ?>"
-                            class="btn btn-primary">Pesan Paket Ini</a>
-                        <!-- <a href="index.php?page=tambah_keranjang&id_paket=<?= $rekomendasi['id_paket']; ?>"
+                        <a href="index.php?page=pesan_paket_katering_fix&id_paket_katering=<?= $rekomendasi['id_paket'] ?>&budget=<?= $rekomendasi['budget'] ?>&jumlah_porsi=<?= ceil($rekomendasi['budget'] / $rekomendasi['harga']) ?>"
+                            class="btn btn-primary">Pesan</a>
+                        <a href="index.php?page=tambah_keranjang&id_paket=<?= $rekomendasi['id_paket']; ?>"
                             class="btn btn-success">
-                            + Keranjang
-                        </a> -->
+                            Keranjang
+                        </a>
                     </div>
                 </div>
             </div>
@@ -114,8 +114,16 @@ usort($hasil_wp, function ($a, $b) {
                                 <td>
                                     <?= $jumlahPorsi = ceil($paket['budget'] / $paket['harga']); ?>
                                 </td>
-                                <td><a href="index.php?page=pesan_paket_katering_fix&id_paket_katering=<?= $paket['id_paket'] ?>&budget=<?= $paket['budget'] ?>&jumlah_porsi=<?= $jumlahPorsi ?>"
-                                        class="btn btn-primary">Pesan Paket Ini</a></td>
+                                <td>
+                                    <a href="index.php?page=pesan_paket_katering_fix&id_paket_katering=<?= $paket['id_paket'] ?>&budget=<?= $paket['budget'] ?>&jumlah_porsi=<?= $jumlahPorsi ?>"
+                                        class="btn btn-primary">Pesan</a>
+                                    <a href="index.php?page=tambah_keranjang&id_paket=<?= $paket['id_paket']; ?>"
+                                        class="btn btn-success">
+                                        Keranjang
+                                    </a>
+                                </td>
+
+
                                 </td>
                                 <!-- <td>
                                     <a href="index.php?page=tambah_keranjang&id_paket=<?= $paket['id_paket']; ?>"
@@ -139,6 +147,10 @@ usort($hasil_wp, function ($a, $b) {
 
     </div>
 </section>
+
+
+
+
 
 <?php
 require_once __DIR__ . '/../../pages/layouts/footer.php';
