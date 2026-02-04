@@ -67,7 +67,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'landing_page';
 switch ($page) {
 
     case 'landing_page':
-        $title = "Landing Page";
+        $title = "Landing";
         break;
 
     case 'menu_favorit':
@@ -79,122 +79,122 @@ switch ($page) {
         break;
     // Auth
     case 'login':
-        $title = "Login Page";
+        $title = "Login";
         break;
     case 'logout':
-        $title = "Logout Page";
+        $title = "Logout";
         break;
 
     // Profil
     case 'profil':
-        $title = "Profil Page";
+        $title = "Profil";
         break;
 
     // Budget Pelanggan
     case 'input_budget_pelanggan':
-        $title = "Input Budget Pelanggan Page";
+        $title = "Input Budget Pelanggan";
         break;
     case 'hasil_budget_pelanggan':
-        $title = "Hasil Budget Pelanggan Page";
+        $title = "Hasil Budget Pelanggan";
         break;
 
     // Keranjang
     case 'keranjang':
-        $title = "Keranjang Page";
+        $title = "Keranjang";
         break;
     case 'tambah_keranjang':
-        $title = "Tambah Keranjang Page";
+        $title = "Tambah Keranjang";
         break;
     case 'keranjang_pemesanan':
-        $title = "Keranjang Pemesanan Page";
+        $title = "Keranjang Pemesanan";
         break;
 
 
 
     //kriteria
     case 'kriteria':
-        $title = "Kriteria Page";
+        $title = "Kriteria";
         break;
     case 'tambah_kriteria':
-        $title = "Tambah Kriteria Page";
+        $title = "Tambah Kriteria";
         break;
 
     //menu katering
     case 'menu_katering':
-        $title = "Menu Katering Page";
+        $title = "Menu Katering";
         break;
     case 'tambah_menu_katering':
-        $title = "Tambah Menu Katering Page";
+        $title = "Tambah Menu Katering";
         break;
     case 'edit_menu_katering':
-        $title = "Edit Menu Katering Page";
+        $title = "Edit Menu Katering";
         break;
     case 'hapus_menu_katering':
-        $title = "Hapus Menu Katering Page";
+        $title = "Hapus Menu Katering";
         break;
 
     //paket katering
     case 'paket_katering':
-        $title = "Paket Katering Page";
+        $title = "Paket Katering";
         break;
     case 'tambah_paket_katering':
-        $title = "Tambah Paket Katering Page";
+        $title = "Tambah Paket Katering";
         break;
     case 'edit_paket_katering':
-        $title = "Edit Paket Katering Page";
+        $title = "Edit Paket Katering";
         break;
     case 'hapus_paket_katering':
-        $title = "Hapus Paket Katering Page";
+        $title = "Hapus Paket Katering";
         break;
 
     case 'pesan_hasil_paket_katering':
-        $title = "Pesan Hasil Paket Katering Page";
+        $title = "Pesan Hasil Paket Katering";
         break;
     case 'pesan_paket_katering_fix':
-        $title = "Pesan Paket Katering Fix Page";
+        $title = "Pesan Paket Katering Fix";
         break;
 
     //hasil paket menu
     case 'hasil_paket_menu':
-        $title = "Hasil Paket Menu Page";
+        $title = "Hasil Paket Menu";
         break;
     case 'tambah_hasil_paket_menu':
-        $title = "Tambah Hasil Paket Menu Page";
+        $title = "Tambah Hasil Paket Menu";
         break;
 
 
     //pesan paket katering langsung
     case 'proses_checkout_langsung':
-        $title = "Proses Checkout Langsung Page";
+        $title = "Proses Checkout Langsung";
         break;
     //pesan paket katering
     case 'pesan_paket_katering':
-        $title = "Pesan Paket Katering Page";
+        $title = "Pesan Paket Katering";
         break;
     case 'proses_checkout':
-        $title = "Proses Checkout Page";
+        $title = "Proses Checkout";
         break;
     //riwayat pemesanan pelanggan
     case 'riwayat_pemesanan_pelanggan':
-        $title = "Riwayat Pemesanan Pelanggan Page";
+        $title = "Riwayat Pemesanan Pelanggan";
         break;
     case 'detail_riwayat_pemesanan_pelanggan':
-        $title = "Detail Riwayat Pemesanan Pelanggan Page";
+        $title = "Detail Riwayat Pemesanan Pelanggan";
         break;
 
     //riwayat pemesanan pemilik
     case 'riwayat_pemesanan_pemilik':
-        $title = "Riwayat Pemesanan Pemilik Page";
+        $title = "Riwayat Pemesanan Pemilik";
         break;
     case 'detail_riwayat_pemesanan_pemilik':
-        $title = "Detail Riwayat Pemesanan Pemilik Page";
+        $title = "Detail Riwayat Pemesanan Pemilik";
         break;
 
 
 
     // Error Pages
     case 'forbidden':
-        $title = "Forbidden 403 Page";
+        $title = "Forbidden 403";
         break;
     default:
         $title = "404 Page Not Found";

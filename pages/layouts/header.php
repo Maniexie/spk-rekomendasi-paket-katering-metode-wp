@@ -29,7 +29,7 @@ $BASE_URL = BASE_URL;
     <div class="admin-container">
         <!-- Sidebar Navigation -->
         <nav class="sidebar ">
-            <h4>SPK</h4>
+            <h4>Assifa Katering</h4>
             <!-- <p><?= BASE_URL ?></p> -->
             <hr>
             <ul class="nav flex-column">
