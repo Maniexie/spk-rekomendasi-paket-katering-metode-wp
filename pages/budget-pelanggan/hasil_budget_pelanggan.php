@@ -15,7 +15,7 @@ $query = mysqli_query($koneksi, "
         mk.nama_menu,
         COUNT(hpm.id_menu_katering) AS jumlah_menu,
         (pk.harga / $budget) AS nilai_budget,
-        GROUP_CONCAT(mk.nama_menu SEPARATOR '<br>') AS menu_katering
+        GROUP_CONCAT(mk.nama_menu) AS menu_katering
     FROM paket_katering pk
     JOIN hasil_paket_menu hpm 
         ON pk.id_paket_katering = hpm.id_paket_katering
@@ -78,9 +78,9 @@ usort($hasil_wp, function ($a, $b) {
                     </div>
                     <div class="container">
                         <a href="index.php?page=pesan_paket_katering_fix&id_paket_katering=<?= $rekomendasi['id_paket'] ?>&budget=<?= $rekomendasi['budget'] ?>&jumlah_porsi=<?= ceil($rekomendasi['budget'] / $rekomendasi['harga']) ?>"
-                            class="btn btn-primary">Pesan</a>
+                            class="btn btn-sm btn-primary">Pesan</a>
                         <a href="index.php?page=tambah_keranjang&id_paket=<?= $rekomendasi['id_paket']; ?>"
-                            class="btn btn-success">
+                            class="btn btn-sm btn-warning text-white">
                             Keranjang
                         </a>
                     </div>
@@ -109,16 +109,22 @@ usort($hasil_wp, function ($a, $b) {
                                 <th scope="row"><?= $no + 1; ?></th>
                                 <td><?= $paket['nama_paket']; ?></td>
                                 <td>Rp <?= number_format($paket['harga']); ?></td>
-                                <td><?= $paket['menu_item']; ?></td>
+                                <td>
+                                    <div class="d-flex flex-wrap gap-1 justify-content-center">
+                                        <?php foreach (explode(',', $paket['menu_item']) as $menu): ?>
+                                            <span class="badge bg-primary"><?= $menu ?></span>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </td>
                                 <td><?= round($paket['nilai_wp'], 2); ?></td>
                                 <td>
                                     <?= $jumlahPorsi = ceil($paket['budget'] / $paket['harga']); ?>
                                 </td>
                                 <td>
                                     <a href="index.php?page=pesan_paket_katering_fix&id_paket_katering=<?= $paket['id_paket'] ?>&budget=<?= $paket['budget'] ?>&jumlah_porsi=<?= $jumlahPorsi ?>"
-                                        class="btn btn-primary">Pesan</a>
+                                        class="btn btn-sm btn-primary">Pesan</a>
                                     <a href="index.php?page=tambah_keranjang&id_paket=<?= $paket['id_paket']; ?>"
-                                        class="btn btn-success">
+                                        class="btn btn-sm btn-warning text-white">
                                         Keranjang
                                     </a>
                                 </td>
@@ -127,7 +133,7 @@ usort($hasil_wp, function ($a, $b) {
                                 </td>
                                 <!-- <td>
                                     <a href="index.php?page=tambah_keranjang&id_paket=<?= $paket['id_paket']; ?>"
-                                        class="btn btn-success">
+                                        class="btn btn-warning text-white">
                                         + Keranjang
                                     </a>
                                 </td> -->

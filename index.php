@@ -27,9 +27,13 @@ $allowedPages = [
 
     'menu_katering' => 'pages/menu-katering/menu_katering.php',
     'tambah_menu_katering' => 'pages/menu-katering/tambah_menu_katering.php',
+    'edit_menu_katering' => 'pages/menu-katering/edit_menu_katering.php',
+    'hapus_menu_katering' => 'pages/menu-katering/hapus_menu_katering.php',
 
     'paket_katering' => 'pages/paket-katering/paket_katering.php',
     'tambah_paket_katering' => 'pages/paket-katering/tambah_paket_katering.php',
+    'edit_paket_katering' => 'pages/paket-katering/edit_paket_katering.php',
+    'hapus_paket_katering' => 'pages/paket-katering/hapus_paket_katering.php',
 
 
     'hasil_paket_menu' => 'pages/hasil-paket-menu/hasil_paket_menu.php',
@@ -122,6 +126,12 @@ switch ($page) {
     case 'tambah_menu_katering':
         $title = "Tambah Menu Katering Page";
         break;
+    case 'edit_menu_katering':
+        $title = "Edit Menu Katering Page";
+        break;
+    case 'hapus_menu_katering':
+        $title = "Hapus Menu Katering Page";
+        break;
 
     //paket katering
     case 'paket_katering':
@@ -130,6 +140,13 @@ switch ($page) {
     case 'tambah_paket_katering':
         $title = "Tambah Paket Katering Page";
         break;
+    case 'edit_paket_katering':
+        $title = "Edit Paket Katering Page";
+        break;
+    case 'hapus_paket_katering':
+        $title = "Hapus Paket Katering Page";
+        break;
+
     case 'pesan_hasil_paket_katering':
         $title = "Pesan Hasil Paket Katering Page";
         break;
@@ -163,6 +180,14 @@ switch ($page) {
         break;
     case 'detail_riwayat_pemesanan_pelanggan':
         $title = "Detail Riwayat Pemesanan Pelanggan Page";
+        break;
+
+    //riwayat pemesanan pemilik
+    case 'riwayat_pemesanan_pemilik':
+        $title = "Riwayat Pemesanan Pemilik Page";
+        break;
+    case 'detail_riwayat_pemesanan_pemilik':
+        $title = "Detail Riwayat Pemesanan Pemilik Page";
         break;
 
 

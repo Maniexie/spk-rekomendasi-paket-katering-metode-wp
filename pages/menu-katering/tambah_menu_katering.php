@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
     Swal.fire({
-        title: "Proses Penambahan Data Item Penilaian",
+        title: "Proses Penambahan Data Menu Katering",
         timer: 1500,
         didOpen: () => {
             Swal.showLoading();
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }).then(() => {
         Swal.fire({
             icon: "success",
-            title: "Data Item Penilaian Berhasil di Tambahkan",
+            title: "Data Menu Katering Berhasil di Tambahkan",
             showConfirmButton: true,
             timer: 3000
         }).then(() => {
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
     Swal.fire({
-        title: "Proses Penambahan Data Item Penilaian",
+        title: "Proses Penambahan Data Menu Katering",
         timer: 1500,
         didOpen: () => {
             Swal.showLoading();
@@ -64,11 +64,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }).then(() => {
         Swal.fire({
             icon: "error",
-            title: "Data Item Penilaian Gagal di Tambahkan",
+            title: "Data Menu Katering Gagal di Tambahkan",
             showConfirmButton: true,
             timer: 3000
         }).then(() => {
-            window.location.href = "index.php?page=tambah_item_penilaian";
+            window.location.href = "index.php?page=tambah_menu_katering";
         });
     });
     </script>';
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <section>
     <div class="container border rounded p-4 mb-4 mt-2">
         <!-- start get data value -->
-        <h2 class="text-center">Tambah Item Penilaian</h2>
+        <h2 class="text-center">Tambah Menu Katering</h2>
 
         <!-- Form -->
         <form class="needs-validation" method="post">
@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         Swal.fire({
-            title: "Proses Penambahan Data Item Penilaian",
+            title: "Proses Penambahan Data Menu Katering",
             timer: 1500,
             didOpen: () => {
                 Swal.showLoading();
@@ -108,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             Swal.fire({
                 icon: "error",
                 title: "<?= $error_message ?>",
-                text: "Silahkan gunakan kode item penilaian yang lain.",
+                text: "Silahkan gunakan kode Menu Katering yang lain.",
                 showConfirmButton: true,
                 timer: 3000
             });

@@ -86,19 +86,19 @@ $no = $offset + 1;
                 <ul class="pagination justify-content-center mt-4">
                     <!-- Previous -->
                     <li class="page-item <?= ($page_no <= 1) ? 'disabled' : '' ?>">
-                        <a class="page-link" href="?page=item_penilaian&page_no=<?= $page_no - 1 ?>">Previous</a>
+                        <a class="page-link" href="?page=paket_katering&page_no=<?= $page_no - 1 ?>">Previous</a>
                     </li>
 
                     <!-- Nomor halaman -->
                     <?php for ($i = 1; $i <= $totalPages; $i++): ?>
                         <li class="page-item <?= ($i == $page_no) ? 'active' : '' ?>">
-                            <a class="page-link" href="?page=item_penilaian&page_no=<?= $i ?>"><?= $i ?></a>
+                            <a class="page-link" href="?page=paket_katering&page_no=<?= $i ?>"><?= $i ?></a>
                         </li>
                     <?php endfor; ?>
 
                     <!-- Next -->
                     <li class="page-item <?= ($page_no >= $totalPages) ? 'disabled' : '' ?>">
-                        <a class="page-link" href="?page=item_penilaian&page_no=<?= $page_no + 1 ?>">Next</a>
+                        <a class="page-link" href="?page=paket_katering&page_no=<?= $page_no + 1 ?>">Next</a>
                     </li>
                 </ul>
             </nav>
@@ -110,8 +110,8 @@ $no = $offset + 1;
 <script>
     function konfirmasiDelete(deleteUrl) {
         Swal.fire({
-            title: 'Hapus Data Item Penilaian',
-            html: `Anda yakin ingin menghapus data item penilaian?`,
+            title: 'Hapus Data Paket Katering',
+            html: `Anda yakin ingin menghapus data Paket Katering?`,
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#d33',

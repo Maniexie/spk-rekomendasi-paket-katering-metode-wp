@@ -69,9 +69,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label for="id_paket_katering" class="form-label" style="margin-bottom: -10px;">Nama Paket
                     Katering</label>
                 <select class="form-select" id="id_paket_katering" name="id_paket_katering" required>
-                    <option selected disabled value="">==Nama Paket==</option>
+                    <option selected disabled value="" style="height: 200px; overflow-y: scroll">==Nama Paket==</option>
                     <?php while ($paket = mysqli_fetch_assoc($getDataPaketKatering)): ?>
-                        <option value="<?= $paket['id_paket_katering'] ?>"
+                        <option style="height: 200px; overflow-y: scroll" value=" <?= $paket['id_paket_katering'] ?>"
                             <?= ($old_id_paket_katering == $paket['id_paket_katering']) ? 'selected' : '' ?>>
                             <?= $paket['nama_paket'] ?>
                         </option>
@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <div class="col-md mt-3">
                 <label class="form-label">Pilih Menu Katering</label>
-                <div class="border rounded p-3">
+                <div class="border rounded p-3" style="height: 200px; overflow-y: scroll;">
 
                     <?php while ($menu = mysqli_fetch_assoc($getDataMenutKatering)): ?>
                         <div class="form-check">

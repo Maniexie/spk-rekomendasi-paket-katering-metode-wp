@@ -7,7 +7,7 @@
         </p>
 
         <div class="mt-4">
-            <a href="index.php?page=menu_katering" class="btn btn-success btn-lg me-2">
+            <a href="index.php?page=menu_favorit" class="btn btn-success btn-lg me-2">
                 Lihat Menu
             </a>
             <a href="#keunggulan" class="btn btn-outline-light btn-lg">

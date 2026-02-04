@@ -3,7 +3,7 @@ require_once __DIR__ . '/../../pages/layouts/header.php';
 require_once __DIR__ . '/../../koneksi.php';
 
 // jumlah data per halaman
-$limit = 10;
+$limit = 5;
 
 // halaman saat ini dari URL, default 1
 $page_no = isset($_GET['page_no']) ? (int) $_GET['page_no'] : 1;
@@ -55,7 +55,7 @@ $no = $offset + 1;
                 <a href="index.php?page=tambah_hasil_paket_menu" class="btn btn-primary">+ Tambah Paket Katering</a>
             </div>
         <?php endif ?>
-        <div class="container mt-4 table-responsive" style="max-height: 700px; overflow-y: auto;">
+        <div class="container mt-4 table-responsive" style="max-height: 400px; overflow-y: auto;">
             <table class="table table-striped table-hover" style="max-height:300px;">
                 <thead>
                     <tr>
@@ -86,27 +86,27 @@ $no = $offset + 1;
                     <?php endforeach ?>
                 </tbody>
             </table>
-            <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center mt-4">
-                    <!-- Previous -->
-                    <li class="page-item <?= ($page_no <= 1) ? 'disabled' : '' ?>">
-                        <a class="page-link" href="?page=item_penilaian&page_no=<?= $page_no - 1 ?>">Previous</a>
-                    </li>
-
-                    <!-- Nomor halaman -->
-                    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-                        <li class="page-item <?= ($i == $page_no) ? 'active' : '' ?>">
-                            <a class="page-link" href="?page=item_penilaian&page_no=<?= $i ?>"><?= $i ?></a>
-                        </li>
-                    <?php endfor; ?>
-
-                    <!-- Next -->
-                    <li class="page-item <?= ($page_no >= $totalPages) ? 'disabled' : '' ?>">
-                        <a class="page-link" href="?page=item_penilaian&page_no=<?= $page_no + 1 ?>">Next</a>
-                    </li>
-                </ul>
-            </nav>
         </div>
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center mt-4">
+                <!-- Previous -->
+                <li class="page-item <?= ($page_no <= 1) ? 'disabled' : '' ?>">
+                    <a class="page-link" href="?page=hasil_paket_menu&page_no=<?= $page_no - 1 ?>">Previous</a>
+                </li>
+
+                <!-- Nomor halaman -->
+                <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                    <li class="page-item <?= ($i == $page_no) ? 'active' : '' ?>">
+                        <a class="page-link" href="?page=hasil_paket_menu&page_no=<?= $i ?>"><?= $i ?></a>
+                    </li>
+                <?php endfor; ?>
+
+                <!-- Next -->
+                <li class="page-item <?= ($page_no >= $totalPages) ? 'disabled' : '' ?>">
+                    <a class="page-link" href="?page=hasil_paket_menu&page_no=<?= $page_no + 1 ?>">Next</a>
+                </li>
+            </ul>
+        </nav>
     </div>
 </section>
 

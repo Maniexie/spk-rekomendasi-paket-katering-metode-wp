@@ -26,10 +26,14 @@ function checkRoleAccess($page)
             // menu katering
             'menu_katering',
             'tambah_menu_katering',
+            'edit_menu_katering',
+            'hapus_menu_katering',
 
             // paket katering
             'paket_katering',
             'tambah_paket_katering',
+            'edit_paket_katering',
+            'hapus_paket_katering',
 
             // hasil paket menu
             'hasil_paket_menu',
