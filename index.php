@@ -8,6 +8,8 @@ $ajaxPages = [
 $allowedPages = [
     'landing_page' => 'pages/landing_page.php',
     'login' => 'pages/auth/login.php',
+
+    'menu_favorit' => 'pages/menu_favorit.php',
     'logout' => 'pages/auth/logout.php',
     'dashboard' => 'pages/dashboard.php',
     'profil' => 'pages/profil.php',
@@ -59,6 +61,14 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'landing_page';
 
 
 switch ($page) {
+
+    case 'landing_page':
+        $title = "Landing Page";
+        break;
+
+    case 'menu_favorit':
+        $title = "Menu Favorit";
+        break;
     case 'dashboard':
         $title = "Dashboard";
         // $content = "pages/dashboard.php";

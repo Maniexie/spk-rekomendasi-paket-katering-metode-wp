@@ -9,7 +9,7 @@ function checkRoleAccess($page)
 
         'Guest' => [
             'landing_page',
-            'menu_katering',
+            'menu_favorit',
             'paket_katering',
             'hasil_paket_menu',
             'login'

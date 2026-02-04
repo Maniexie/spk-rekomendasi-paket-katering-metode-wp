@@ -11,9 +11,7 @@ header("Expires: 0");
 */
 $publicPages = [
     'landing_page',
-    'menu_katering',
-    'paket_katering',
-    'hasil_paket_menu',
+    'menu_favorit',
     'login'
 ];
 
