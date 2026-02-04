@@ -49,60 +49,135 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $title ?></title>
-    <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.23.0/dist/sweetalert2.min.css " rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.23.0/dist/sweetalert2.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            min-height: 100vh;
+            background: linear-gradient(120deg, #f8f9fa, #e9f7ef);
+            display: flex;
+            align-items: center;
+        }
+
+        /* card full height */
+        .login-card {
+            border-radius: 16px;
+            overflow: hidden;
+            min-height: 520px;
+        }
+
+        /* kolom gambar */
+        .login-image {
+            height: 100%;
+            min-height: 520px;
+
+            background: url('https://static7.depositphotos.com/1020288/794/i/450/depositphotos_7941348-stock-photo-table-with-food-and-drink.jpg') center center / cover no-repeat;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* form biar center vertikal */
+        .form-wrapper {
+            min-height: 520px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-control {
+            border-radius: 10px;
+        }
+
+        .btn-login {
+            border-radius: 10px;
+            padding: 10px;
+        }
+    </style>
 </head>
 
 <body>
+
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-6">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4lL4rvcMPRD1eJYg3ktdqF7i3O4IKO83T8w&s"
-                    alt="">
-            </div>
-            <div class="col-6">
+            <div class="col-lg-9 col-md-10">
 
-                <form action="" method="post">
-                    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
-                    <div class="mb-3">
-                        <label for="email">email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="" required
-                            autofocus>
+                <div class="card shadow-lg login-card">
+                    <div class="row g-0">
+
+                        <!-- GAMBAR -->
+                        <div class="col-md-6 d-none d-md-block">
+                            <div class="login-image">
+                            </div>
+                        </div>
+
+                        <!-- FORM LOGIN -->
+                        <div class="col-md-6 p-4 p-md-5">
+                            <h3 class="fw-bold mb-2 text-center">Selamat Datang 👋</h3>
+                            <p class="text-muted text-center mb-4">
+                                Login untuk memesan katering favoritmu
+                            </p>
+
+                            <form action="" method="post">
+                                <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="contoh@email.com" required autofocus>
+                                </div>
+
+                                <div class="mb-2">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password" name="password"
+                                        placeholder="••••••••" required>
+                                </div>
+
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" onclick="showHide()"
+                                        id="showPassword">
+                                    <label class="form-check-label" for="showPassword">
+                                        Tampilkan Password
+                                    </label>
+                                </div>
+
+                                <div class="d-grid">
+                                    <button type="submit" name="submit" class="btn btn-success btn-login">
+                                        Login
+                                    </button>
+                                </div>
+
+                                <p class="text-center mt-3 text-muted">
+                                    Belum punya akun? <a href="#" class="text-success fw-semibold">Daftar</a>
+                                </p>
+                            </form>
+                        </div>
+
                     </div>
-                    <div class="mb-1">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
-                    </div>
-                    <div class="show-password ">
-                        <p>
-                            <input type="checkbox" onclick="showHide()" />
-                            Tampilkan Password
-                        </p>
-                    </div>
-                    <input type="submit" class="btn btn-primary" name="submit" value="Login">
-                </form>
+                </div>
+
             </div>
         </div>
     </div>
 
-    <!-- SCRIPT FOR SHOW PASSWORD -->
-    <script type="text/javascript">
+    <!-- SCRIPT -->
+    <script>
         function showHide() {
             let inputan = document.getElementById("password");
-            if (inputan.type === "password") {
-                inputan.type = "text";
-            } else {
-                inputan.type = "password";
-            }
-        } 
+            inputan.type = inputan.type === "password" ? "text" : "password";
+        }
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
     <?php if ($loginError): ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

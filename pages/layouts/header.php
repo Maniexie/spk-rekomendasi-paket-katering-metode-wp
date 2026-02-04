@@ -56,6 +56,10 @@ $BASE_URL = BASE_URL;
                     <li class="nav-item"><a href="index.php?page=riwayat_pemesanan_pelanggan" class="nav-link">Riwayat
                             Pemesanan</a></li>
                 <?php endif ?>
+                <?php if ($_SESSION['role'] == 'Pemilik'): ?>
+                    <li class="nav-item"><a href="index.php?page=riwayat_pemesanan_pemilik" class="nav-link">Riwayat
+                            Pemesanan</a></li>
+                <?php endif ?>
 
                 <li><a href="index.php?page=logout" class="nav-link">Logout</a></li>
             </ul>
@@ -88,24 +92,26 @@ $BASE_URL = BASE_URL;
             <!-- Header -->
             <header>
                 <h4><?= $title ?></h4>
-                <li class="nav-item dropdown">
-                    <a class="nav-link position-relative" href="index.php?page=keranjang_pemesanan" id="cartBtn">
-                        🛒
-                        <span id="cart-count"
-                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            <!-- <?= $totalItem ?> -->
-                            <?= $totalPaket ?>
-                            <span class="visually-hidden">unread messages
-                            </span>
-                    </a>
+                <?php if ($_SESSION['role'] == 'Pelanggan'): ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link position-relative" href="index.php?page=keranjang_pemesanan" id="cartBtn">
+                            🛒
+                            <span id="cart-count"
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                <!-- <?= $totalItem ?> -->
+                                <?= $totalPaket ?>
+                                <span class="visually-hidden">unread messages
+                                </span>
+                        </a>
 
-                    <div id="cart-dropdown" class="dropdown-menu dropdown-menu-end p-3"
-                        style="width:300px; display:none;">
-                        <div id="cart-items">
-                            Keranjang kosong
+                        <div id="cart-dropdown" class="dropdown-menu dropdown-menu-end p-3"
+                            style="width:300px; display:none;">
+                            <div id="cart-items">
+                                Keranjang kosong
+                            </div>
                         </div>
-                    </div>
-                </li>
+                    </li>
+                <?php endif ?>
                 <div class="user-profile text-capitalize">Selamat datang,
                     <?php echo $_SESSION['nama']; ?>(<span class=""><?php echo $_SESSION['role']; ?></span>)
                 </div>

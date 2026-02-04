@@ -3,10 +3,18 @@
 
 function checkRoleAccess($page)
 {
-    $role = $_SESSION['role'] ?? null;
-
+    $role = $_SESSION['role'] ?? 'Guest';
 
     $rolePages = [
+
+        'Guest' => [
+            'landing_page',
+            'menu_katering',
+            'paket_katering',
+            'hasil_paket_menu',
+            'login'
+        ],
+
         'Pemilik' => [
             'dashboard',
             'profil',
@@ -31,8 +39,11 @@ function checkRoleAccess($page)
             'pesan_hasil_paket_katering',
             'pesan_paket_katering_fix',
 
+            // riwayat pemesanan pemilik
+            'riwayat_pemesanan_pemilik',
+            'detail_riwayat_pemesanan_pemilik',
 
-
+            'update_status_pemesanan',
         ],
 
         'Pelanggan' => [
@@ -72,8 +83,8 @@ function checkRoleAccess($page)
 
             // proses checkout langsung
             'proses_checkout_langsung',
-
         ],
+
     ];
 
     if (!isset($rolePages[$role]) || !in_array($page, $rolePages[$role])) {

@@ -6,6 +6,7 @@ $ajaxPages = [
 ];
 
 $allowedPages = [
+    'landing_page' => 'pages/landing_page.php',
     'login' => 'pages/auth/login.php',
     'logout' => 'pages/auth/logout.php',
     'dashboard' => 'pages/dashboard.php',
@@ -43,13 +44,19 @@ $allowedPages = [
     'riwayat_pemesanan_pelanggan' => 'pages/riwayat_pemesanan/riwayat_pemesanan_pelanggan.php',
     'detail_riwayat_pemesanan_pelanggan' => 'pages/riwayat_pemesanan/detail_riwayat_pemesanan_pelanggan.php',
 
+    'riwayat_pemesanan_pemilik' => 'pages/riwayat_pemesanan/riwayat_pemesanan_pemilik.php',
+    'detail_riwayat_pemesanan_pemilik' => 'pages/riwayat_pemesanan/detail_riwayat_pemesanan_pemilik.php',
+
+    'update_status_pemesanan' => 'pages/riwayat_pemesanan/update_status_pemesanan.php',
+
     'forbidden' => 'pages/error/403.php',
     '404' => 'pages/error/404.php',
 
 
 ];
 
-$page = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
+$page = isset($_GET['page']) ? $_GET['page'] : 'landing_page';
+
 
 switch ($page) {
     case 'dashboard':
